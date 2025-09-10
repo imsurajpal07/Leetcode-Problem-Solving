@@ -13,15 +13,13 @@ class Solution {
         ListNode slow = head;
         ListNode fast = head;
         int maxSum = 0;
-        while(fast != null && fast.next != null)
-        {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         ListNode reverseHead = reverseList(slow);
         ListNode firstNode = head;
-        while(reverseHead != null)
-        {
+        while (reverseHead != null) {
             maxSum = Math.max(maxSum, (firstNode.val + reverseHead.val));
             firstNode = firstNode.next;
             reverseHead = reverseHead.next;
@@ -30,12 +28,10 @@ class Solution {
         return maxSum;
     }
 
-    public ListNode reverseList(ListNode node)
-    {
+    public ListNode reverseList(ListNode node) {
         ListNode curr = node;
         ListNode prev = null;
-        while(curr != null)
-        {
+        while (curr != null) {
             ListNode next = curr.next;
             curr.next = prev;
             prev = curr;
