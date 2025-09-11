@@ -4,9 +4,9 @@ class Solution {
         int[] arr = new int[n];
         int prefix = 1;
         int suffix = 1;
-        arr[0] = prefix;
-        for (int i = 1; i < n; i++) {
-            arr[i] = arr[i - 1] * nums[i - 1];
+        for (int i = 0; i < n; i++) {
+            arr[i] = prefix;
+            prefix = arr[i] * nums[i];
         }
         for (int i = n - 1; i >= 0; i--) {
             arr[i] = suffix * arr[i];
